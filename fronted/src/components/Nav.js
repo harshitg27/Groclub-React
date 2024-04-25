@@ -1,54 +1,54 @@
 import React from 'react';
-import comlogo from './img/groclub.png';
-import './Nav.css'
+import './Nav.css' ;
+import PropTypes from 'prop-types' ;
 import searchicon from './img/icons/search.png';
 import micicon from './img/icons/mic.png';
+import { Link } from 'react-router-dom';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function Navbar(){
+function Navbar(props){
     return(
         <header id="header">
-            <a href="/"> <img src={comlogo} className="logo" alt="logo" /> </a>
+            <Link to="/"> 
+            <img src={props.logo} className="logo" alt="logo" /> </Link>
             <div className="search-bar">
             <div>
-                 {/* magnifying glass- search icon */}
+
                  <img src={searchicon}  className="search-ico" />
-                {/* <i className="fas fa-search search-ico"></i>
-                 */}
-                 {/* <FontAwesomeIcon icon="fa-regular fa-magnifying-glass" /> */}
+
             </div>
             <input type="text" name="search" placeholder="Search"/>
             <div>
-                {/*  mic icon */}
+                
                 <img src={micicon}  className="mic-ico" />
-                {/* <i class="fas fa-microphone mic-ico"></i> */}
+
             </div>
         </div>
             <div id="profile">
-                <button id="login"  >Login</button>
+                <button id="login"  >{props.name}</button>
             </div>
             <div>
                 <ul id="navbar" className="no-list-style horizontal-list text-center">
                     <li >
-                        <a href="/" className="active"> Home </a>
+                        <Link to="/" className="active"> Home </Link>
                     </li>
                     <li >
-                        <a href="#"> Shop </a>
+                        <Link to="#"> Shop </Link>
                     </li>
                     <li >
-                        <a href="#"> My Order </a>
+                        <Link to="#"> My Order </Link>
                     </li>
                     <li >
-                        <a href="#"> WishList </a>
+                        <Link to="#"> WishList </Link>
                     </li>
                     <li >
-                        <a href="#"> About </a>
+                        <Link to="#"> About </Link>
                     </li>
                     <li >
-                        <a href="#"> Contact us </a>
+                        <Link to="#"> Contact us </Link>
                     </li>
                     <li >
-                        <a href="#cart"> <i className="fa-solid fa-cart-shopping"></i> Cart </a>
+                        <Link to="/cart"> <i className="fa-solid fa-cart-shopping"></i> Cart </Link>
                     </li>
                 </ul>
             </div>
@@ -56,4 +56,13 @@ function Navbar(){
     );
 }
 
+
+
+Navbar.propTypes = {
+    name : PropTypes.string.isRequired
+}
+
+Navbar.defaultProps = {
+    name : "Login"
+}
 export default Navbar ;

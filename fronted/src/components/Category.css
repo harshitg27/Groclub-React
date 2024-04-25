@@ -1,0 +1,34 @@
+#category{
+    height: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row;
+    align-items: center; */
+    justify-content: space-evenly;
+    padding: 1% 7%;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.categorys-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categorys-items p{
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+.category-photos{
+    height: 5rem;
+    width: 4rem;
+    margin: 5px , 5%;
+}
+
+.category-photos img {
+    width: 100%;
+    height: 100%;
+}
